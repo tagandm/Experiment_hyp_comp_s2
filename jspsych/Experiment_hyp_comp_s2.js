@@ -572,7 +572,7 @@ var waiting_demand = {
   "<p class='instructions'>Vous avez maintenant fini de répondre à l'ensemble des questions. " +
   "Après avoir cliquer sur continuer, les données vont être sauvegardées pendant le chargement. " +
   "Veuillez, s'il vous plait, attendre la prochaine page pour quitter. " +
-  "Dans le cas contraire, nous n'aurons pas de preuve que vous êtes allés au bout de l'étude.</p>",
+  "Dans le cas contraire, nous n'aurons pas de preuve que vous êtes allé au bout de l'étude.</p>",
   choices: ['Continuer']
 }
 
