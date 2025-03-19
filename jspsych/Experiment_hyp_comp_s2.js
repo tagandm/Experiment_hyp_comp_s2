@@ -590,6 +590,8 @@ const experiment_id = "iuj0p36PHGEa";
 
 jsPsych.data.addProperties({
   subject_id: subject_id,
+  true_side: true_side,
+  load_condition: load_condition
 })
 
 var save_data = {
