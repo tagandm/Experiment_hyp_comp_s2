@@ -571,9 +571,7 @@ var waiting_demand = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
   "<p class='instructions'>Vous avez maintenant fini de répondre à l'ensemble des questions. " +
-  "Après avoir cliquer sur continuer, les données vont être sauvegardées pendant le chargement. " +
-  "Veuillez, s'il vous plait, attendre la prochaine page pour quitter. " +
-  "Dans le cas contraire, nous n'aurons pas de preuve que vous êtes allé au bout de l'étude.</p>",
+  "Après avoir cliquer sur continuer, les données vont être sauvegardées pendant le chargement.</p>",
   choices: ['Continuer']
 }
 
