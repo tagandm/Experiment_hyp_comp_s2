@@ -27,7 +27,7 @@ var welcome = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
   "<p class='instructions'>Chères participantes et participants,</p>" +
-  "<p class='instructions'>Cette étude vous prendra environ XX minutes." +
+  "<p class='instructions'>Cette étude vous prendra entre 15 et 20 minutes." +
   "<p class='instructions'>Vous pouvez vous retirer de l'étude à tout moment. Vos réponses sont anonymes et confidentielles. " +
   "Seules les tendances statistiques des réponses nous intéressent et il ne sera pas possible d'identifier les participantes et participants de l'étude. </p>" +
   "<p class='instructions'>En cliquant sur \u0022Continuer\u0022, vous donnez votre accord pour participer à cette étude.</p>",
@@ -38,7 +38,7 @@ var welcome = {
 var scenario_instruction_without_load = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
-  "<p class= 'instructions_questionnary'>Dans cette tâche, vous allez lire de courtes descriptions d'événements. " +
+  "<p class= 'instructions_questionnary'>Vous allez maintenant réaliser une tâche durant laquelle vous allez lire de courtes descriptions d'événements. " +
   "Pour chacun de ces événements, nous vous demandons de juger si, selon vous, ces événements ont bel et bien eu lieu.</p>",
   choices: ['Continuer']
 };
@@ -46,10 +46,11 @@ var scenario_instruction_without_load = {
 var scenario_instruction_with_load = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
-  "<p class= 'instructions_questionnary'>Dans cette tâche, vous allez lire de courtes descriptions d'événements. " +
-  "Pour chacun de ces événements, nous vous demander de juger si, selon vous, ces événements ont bel et bien eu lieu.</p>" +
+  "<p class= 'instructions_questionnary'>Vous allez maintenant réaliser une tâche durant laquelle vous allez lire de courtes descriptions d'événements. " +
+  "Pour chacun de ces événements, nous vous demandons de juger si, selon vous, ces événements ont bel et bien eu lieu.</p>" +
   "<p class= 'instructions_questionnary'>Avant chaque description, vous allez voir une grille que vous devez retenir pendant la lecture de l'évènement qui suit. " +
-  "Nous vous demanderons de la rappeler juste après en choississant entre 4 grilles différentes.",
+  "Nous vous demanderons de la rappeler juste après en choississant entre 4 grilles différentes.<p/>" +
+  "<p class= 'instructions_questionnary'>Il est important que vous mémorisiez les matrices avec précision, tout en lisant et en répondant aux déclarations.<p/>",
   choices: ['Continuer']
 };
 
@@ -466,7 +467,7 @@ var scenario_procedure = {
 //Survey
 var instruction_questionnary = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: "<p class='instructions_questionnary'>La tâche est maintenant terminée. Nous allons à présent vous poser quelques questions sur vous, ainsi que votre vision du monde.</p>" ,
+  stimulus: "<p class='instructions_questionnary'>Nous allons tout d'abord vous poser quelques questions sur votre vision du monde.</p>" ,
   choices: ['Continuer']
 }
 
@@ -606,12 +607,12 @@ timeline.push
   (browser_check,
   preload,
   welcome,
+  instruction_questionnary,
+  cmq_questionnary,
   scenario_instruction,
   scenario_procedure,
-  instruction_questionnary,
-  attention_check,
-  cmq_questionnary,
   instruction_demographic_questionnary,
+  attention_check,
   gender,
   age,
   comment,
