@@ -398,7 +398,11 @@ var post_scenario_categorization = {
     var matrix_order_randomization = jsPsych.timelineVariable('matrix_order_randomization');
     return matrix_order_randomization
   },
-  button_html: '<img src="%choice%" style="width: 250px; height: auto;"/>'
+  button_html: '<img src="%choice%" style="width: 250px; height: auto;"/>',
+  on_start: function() {
+    setTimeout(function() {
+    }, 500);
+  }
 };
 
 var feedback = {
