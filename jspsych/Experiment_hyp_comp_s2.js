@@ -506,11 +506,11 @@ var cmq_questionnary = {
   "<p class='instructions_questionnary'>Pour chacune de ces affirmations ci-dessous, veuillez cocher la case correspondant au chiffre approprié pour indiquer, selon vous, dans quelle mesure vous pensez que ces affirmations sont vraies.</p>"+ 
   "<p class='instructions_questionnary'>Il n'y a pas de réponse objectivement vraie ou fausse, nous sommes intéressés par vos opinions personnelles.</p>",
   questions: [
-       {prompt: "...beaucoup de choses très importantes se produisent dans le monde dont le grand public n'est pas informé.", name: 'cmq_1', labels: cmq_label, required: true},
-       {prompt: "...les politiciens ne nous disent généralement pas ce qui motive réellement leurs décisions.", name: 'cmq_2', labels: cmq_label, required: true},
-       {prompt: "...les agences gouvernementales surveillent étroitement les citoyens.", name: 'cmq_3', labels: cmq_label, required: true},
-       {prompt: "...des événements qui, en apparence, ne semblent pas avoir de lien sont souvent le résultat d'activités secrètes.", name: 'cmq_4', labels: cmq_label, required: true},
-       {prompt: "...il existe des organisations secrètes qui influencent considérablement les décisions politiques.", name: 'cmq_5', labels: cmq_label, required: true},  
+       {prompt: "Beaucoup de choses très importantes se produisent dans le monde dont le grand public n'est pas informé.", name: 'cmq_1', labels: cmq_label, required: true},
+       {prompt: "Les politiciens ne nous disent généralement pas ce qui motive réellement leurs décisions.", name: 'cmq_2', labels: cmq_label, required: true},
+       {prompt: "Les agences gouvernementales surveillent étroitement les citoyens.", name: 'cmq_3', labels: cmq_label, required: true},
+       {prompt: "Des événements qui, en apparence, ne semblent pas avoir de lien sont souvent le résultat d'activités secrètes.", name: 'cmq_4', labels: cmq_label, required: true},
+       {prompt: "Il existe des organisations secrètes qui influencent considérablement les décisions politiques.", name: 'cmq_5', labels: cmq_label, required: true},  
   ],
   required_error: "Veuillez répondre à toutes les questions.",
   button_label: 'Continuer'
