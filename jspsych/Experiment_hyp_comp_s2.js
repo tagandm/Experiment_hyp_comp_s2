@@ -50,7 +50,7 @@ var scenario_instruction_with_load = {
   "Pour chacun de ces événements, nous vous demandons de juger si, selon vous, ces événements ont bel et bien eu lieu.</p>" +
   "<p class= 'instructions_questionnary'>Avant chaque description, vous allez voir une grille que vous devez retenir pendant la lecture de l'évènement qui suit. " +
   "Nous vous demanderons de la rappeler juste après en choississant entre 4 grilles différentes.<p/>" +
-  "<p class= 'instructions_questionnary'>Il est important que vous mémorisiez les matrices avec précision, tout en lisant et en répondant aux déclarations.<p/>",
+  "<p class= 'instructions_questionnary'>Il est important que vous mémorisiez les grilles avec précision, tout en lisant et en répondant aux déclarations.<p/>",
   choices: ['Continuer']
 };
 
