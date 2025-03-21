@@ -26,7 +26,7 @@ var timeline = [];
 var welcome = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
-  "<p class='instructions'>Chères participantes et participants,</p>" +
+  "<p class='instructions'>Chères participantes, chers participants,</p>" +
   "<p class='instructions'>Cette étude vous prendra entre 15 et 20 minutes." +
   "<p class='instructions'>Vous pouvez vous retirer de l'étude à tout moment. Vos réponses sont anonymes et confidentielles. " +
   "Seules les tendances statistiques des réponses nous intéressent et il ne sera pas possible d'identifier les participantes et participants de l'étude. </p>" +
@@ -39,7 +39,7 @@ var scenario_instruction_without_load = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
   "<p class= 'instructions_questionnary'>Vous allez maintenant réaliser une tâche durant laquelle vous allez lire de courtes descriptions d'événements. " +
-  "Pour chacun de ces événements, nous vous demandons de juger si, selon vous, ces événements ont bel et bien eu lieu.</p>",
+  "Pour chacun de ces événements, nous vous demandons de juger si, selon vous, ces événements ont eu lieu.</p>",
   choices: ['Continuer']
 };
 
@@ -47,8 +47,8 @@ var scenario_instruction_with_load = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
   "<p class= 'instructions_questionnary'>Vous allez maintenant réaliser une tâche durant laquelle vous allez lire de courtes descriptions d'événements. " +
-  "Pour chacun de ces événements, nous vous demandons de juger si, selon vous, ces événements ont bel et bien eu lieu.</p>" +
-  "<p class= 'instructions_questionnary'>Avant chaque description, vous allez voir une grille que vous devez retenir pendant la lecture de l'évènement qui suit. " +
+  "Pour chacun de ces événements, nous vous demandons de juger si, selon vous, ces événements ont eu lieu.</p>" +
+  "<p class= 'instructions_questionnary'>Avant chaque description, vous allez voir une grille que vous devez retenir pendant la lecture de l'événement qui suit. " +
   "Nous vous demanderons de la rappeler juste après en choississant entre 4 grilles différentes.<p/>" +
   "<p class= 'instructions_questionnary'>Il est important que vous mémorisiez les grilles avec précision, tout en lisant et en répondant aux déclarations.<p/>",
   choices: ['Continuer']
@@ -369,6 +369,8 @@ var scenario = [
 
 true_side = jsPsych.randomization.sampleWithoutReplacement(["vraie_right", "vraie_left"], 1);
 
+var fast_response_count = 0;
+
 var pre_scenario_categorization = {
   type: jsPsychImageKeyboardResponse,
   stimulus: jsPsych.timelineVariable ('correct_matrix'),
@@ -381,12 +383,23 @@ var pre_scenario_categorization = {
 var scenario_categorization = {
   type: jsPsychHtmlButtonResponse,
   stimulus: function(){
-  return "<p class='instructions'>"+jsPsych.timelineVariable ('scenario')+"</p>" + "<p class='stimuli'>A votre avis, est-ce que cette affirmation est...<br></p>"},
+  return "<p class='instructions'>"+jsPsych.timelineVariable ('scenario')+"</p>" + "<p class='stimuli'>A votre avis, cette affirmation est...<br></p>"},
   choices: function (){
     if (true_side == "vraie_right"){
       return ["fausse", "vraie"]
     } else {
       return ["vraie", "fausse"]
+    }
+  },
+  on_finish: function(data){
+    if (data.rt < 1500) {
+      fast_response_count++;
+    }
+    if (fast_response_count >= 3) {
+      jsPsych.pluginAPI.setTimeout(function() {
+        alert("La tâche de jugement est importante. Veuillez bien lire les affirmations avant de répondre.");
+      });
+      fast_response_count = 0;
     }
   }
 }
@@ -465,8 +478,9 @@ var scenario_procedure = {
       filled_matrix_b: jsPsych.timelineVariable('filled_matrix_b'), 
       filled_matrix_c: jsPsych.timelineVariable('filled_matrix_c'),
       matrix_order: jsPsych.timelineVariable('matrix_order_randomization')
-    },
+    }
   }      
+
 
 //Survey
 var instruction_questionnary = {
@@ -582,7 +596,7 @@ var waiting_demand = {
 var thanks = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus:
-  "<p class='instructions'>Merci pour votre participant. " +
+  "<p class='instructions'>Merci pour votre participation. " +
   "Vos réponses ont bien été enregistrées, vous pouvez rejoindre la personne en charge de l'étude pour récupérer votre crédit.",
   choices: "NO_KEYS"
 }
