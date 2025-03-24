@@ -571,6 +571,21 @@ var age = {
   button_label: 'Continuer'
 }
 
+var class_check = {
+  type: jsPsychSurveyMultiSelect,
+  questions: [
+    {
+      prompt: "<p class='instructions_questionnary'>Attention ! Cette question ne concerne que les étudiants de L3 en psychologie. Si vous êtes en L1, L2, M1 ou M2, vous devez répondre non à cette question.</p>" +
+              "<p class='instructions_questionnary'>Êtes-vous inscrit à l'option de psychologie sociale portant sur les croyances et sur la désinformation ?</p>",
+      options: ["oui", "non"],
+      name: 'class_check',
+      required: true,
+      horizontal: true
+    }
+  ],
+  required_error: "Veuillez répondre à toutes les questions.",
+  button_label: 'Continuer'
+}
 
 var comment = {
   type: jsPsychSurveyText,
@@ -633,6 +648,7 @@ timeline.push
   attention_check,
   gender,
   age,
+  class_check,
   comment,
   waiting_demand,
   save_data,
